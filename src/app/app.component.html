@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div><button class="button" (click)="start()">Start(bfs)</button></div>
 <div class="flex-container" *ngFor="let i of row ">
-  <div  *ngFor="let j of row" class="{{Thing[i][j]}}" (click)="returncolor(i,j)"></div>
- <!-- <div *ngFor="let [i,j] = i!=1 && j!=3 && i!=5 && j!=8" >{{level[i][j]}}</div>-->
+  <div  *ngFor="let j of row" class="{{Thing[i][j]}}" (click)="returncolor(i,j)">
+    <span *ngIf="visited[i][j]==true&&(i!=1||j!=3)&&(i!=5||j!=8)">{{level[i][j]}}</span>
+  </div>
+
+
 
 </div>
 
